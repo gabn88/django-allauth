@@ -1,5 +1,3 @@
-from django.contrib.auth.backends import ModelBackend
-
 from ..utils import get_user_model
 from .utils import filter_users_by_email
 
@@ -7,7 +5,7 @@ from .app_settings import AuthenticationMethod
 from . import app_settings
 
 
-class AuthenticationBackend(ModelBackend):
+class AuthenticationBackend(object):
 
     def authenticate(self, **credentials):
         ret = None
